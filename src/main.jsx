@@ -19,7 +19,10 @@ function CarIllustration() {
       className="car-art"
       src={`${import.meta.env.BASE_URL}silver-sports-car.png`}
       alt="Sleek silver electric sports car"
-      draggable="false"
+      draggable={false}
+      onError={(e) => {
+        console.error('Car image failed to load:', e.currentTarget.src)
+      }}
     />
   )
 }
